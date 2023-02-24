@@ -1,12 +1,12 @@
 
-.signupContainer{
+.signinContainer{
     height: 100vh;
     display: flex;
     justify-content: center;
     background-image: url("https://pixner.net/boleto/demo/assets/images/account/account-bg.jpg");
 }
 
-.signupForm{
+.signinForm{
     width: 500px;
     margin-top: 80px;
     margin-bottom: 80px;
@@ -69,4 +69,15 @@ input::placeholder{
     border: none;
     outline: none;
     border-color: transparent;
+}
+
+.linkWrapper{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkWrapper a{
+    text-decoration: none;
+    color: #6d7bba;
 }
