@@ -2,7 +2,6 @@
 
 .banner{
     height: 550px;
-    background-image: url("http://pixner.net/boleto/demo/assets/images/banner/banner02.jpg");
     display: flex;
     justify-content: center;
     align-items: center;
