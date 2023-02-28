@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.p-dropdown{
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.p-inputtext{
+  width: 120px !important;
+}
+
+.p-dropdown .p-dropdown-trigger{
+  width: 1rem !important;
+}

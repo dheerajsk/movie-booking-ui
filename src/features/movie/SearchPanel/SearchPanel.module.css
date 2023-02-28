@@ -26,15 +26,23 @@
 }
 
 .searchBox{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     padding: 36px 20px;
     background-color: black;
-    opacity: 0.35;
+    opacity: 0.8;
+}
+
+.p-dropdown{
+    border: none !important;
+    background-color: transparent !important;
 }
 
 .searchWrapper{
     border-bottom: 1px solid white;
     width: 21%;
+    padding-bottom: 2px;
 }
 
 .searchInput{
@@ -47,8 +55,20 @@
 
 .searchInput::placeholder{
     color: white;
+    font-weight: 500;
 }
 
 .searchIcon{
     color: white !important;
+}
+
+.searchOption{
+    display: flex;
+    justify-content: inherit;
+    align-items: center;
+}
+
+.searchOption label{
+    color: #31d7a9;
+    margin: 0 12px;
 }
