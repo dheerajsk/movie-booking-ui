@@ -25,3 +25,15 @@ code {
 .p-dropdown .p-dropdown-trigger{
   width: 1rem !important;
 }
+
+.p-card-body{
+  background-color: #032055 !important;
+}
+
+.p-card-title{
+  color: white;
+}
+
+.p-card-content{
+  padding: 0 !important;
+}

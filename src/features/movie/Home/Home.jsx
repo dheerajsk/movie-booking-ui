@@ -1,6 +1,7 @@
 
 import { Navbar } from "../../shared/NavBar/Navbar";
 import { Banner } from "../Banner/Banner.module";
+import { MovieCard } from "../MovieCard/MovieCard";
 import { SearchPanel } from "../SearchPanel/SearchPanel";
 import styles from "./Home.module.css";
 
@@ -13,8 +14,11 @@ export function Home(){
                 <Banner />
             </div>
             <SearchPanel />
-            <div>
-                Here comes the movie grid
+            <div className="row">
+                <div className="col-md-3">
+                <MovieCard />
+                </div>
+               
             </div>
         </div>
         </div>
