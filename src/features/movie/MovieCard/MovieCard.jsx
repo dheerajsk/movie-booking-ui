@@ -2,32 +2,32 @@
 import { Card } from 'primereact/card';
 import styles from "./MovieCard.module.css";
 
-export function MovieCard(){
+export function MovieCard({movie}){
     const header = (
         <img alt="Card" 
-        src="https://pixner.net/boleto/demo/assets/images/movie/movie01.jpg" />
+        src={movie.posterUrl} />
     );
     return(
         <div className={styles.card}>
-        <Card title="Alone"
+        <Card title={movie.name}
         header={header} 
         className="md:w-25rem">
-                <p className={styles.content}>
+                <div className={styles.content}>
                     <hr />
                     <div className={styles.ratings}>
                         <div>
                         <img src='https://pixner.net/boleto/demo/assets/images/movie/tomato.png'></img>
                         &nbsp;&nbsp;
-                        <span>98%</span>
+                        <span>{movie.rating}</span>
                         </div>
                        
                         <div>
                         <img src="https://pixner.net/boleto/demo/assets/images/movie/cake.png" alt="" />
                         &nbsp;&nbsp;
-                        <span>98%</span>
+                        <span>{movie.rating}</span>
                         </div>
                     </div>
-                </p>
+                </div>
         </Card>
         </div>
     )
