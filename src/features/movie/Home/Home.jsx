@@ -4,6 +4,7 @@ import { Navbar } from "../../shared/NavBar/Navbar";
 import { Banner } from "../Banner/Banner.module";
 import { MovieCard } from "../MovieCard/MovieCard";
 import { SearchPanel } from "../SearchPanel/SearchPanel";
+import {Link} from "react-router-dom";
 import styles from "./Home.module.css";
 
 export function Home(){
@@ -30,9 +31,9 @@ export function Home(){
                 {
                     movies.map(m=>
                         <div key={m._id} className="col-md-3">
-                            <a href="/movie/1">
-                            <MovieCard key={m._id} movie={m} />
-                        </a>
+                           <Link to={`movie/${m._id}`}>
+                                <MovieCard key={m._id} movie={m} />
+                            </Link>
                         </div>
                         
                         )
