@@ -1,7 +1,7 @@
 import { Navbar } from "../../shared/NavBar/Navbar";
 import { MovieHeader } from "../MovieHeader/MovieHeader";
 import styles from "./MovieDetail.module.css";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export function MovieDetail(){
@@ -27,7 +27,7 @@ export function MovieDetail(){
         // }
         // callAPI();
         
-    })
+    },[])
 
     return(
         <div>
@@ -40,7 +40,7 @@ export function MovieDetail(){
                     <MovieHeader movie={movie} />
                 </section>
                 <section className={styles.banner}>
-                <a href="#" className={styles.btnBookTickets}>Book Tickets</a>
+                <a href={`${id}/ticketPlan`} className={styles.btnBookTickets}>Book Tickets</a>
                 </section>
              </div>
         </div>

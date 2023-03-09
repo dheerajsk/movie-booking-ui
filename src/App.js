@@ -6,6 +6,7 @@ import { Signin } from './features/users/SIgnIn/SignIn';
 import { Home } from './features/movie/Home/Home';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import { MovieDetail } from './features/movie/MovieDetail/MovieDetail';
+import { TicketPlan } from './features/booking/TicketPlan/TicketPlan';
 
 function App() {
   return (
@@ -16,10 +17,22 @@ function App() {
              <Home />
           }>
           </Route>
-          <Route path='/movie/:id' element={
+          <Route path='/movie/:id/' element={
              <MovieDetail />
           }>
+            {/* <Route path='ticketPlan' element={
+                <TicketPlan />
+                }>
+              </Route>
+              <Route path='checkout' element={
+                <Navbar />
+                }>
+              </Route> */}
           </Route>
+          <Route path='/movie/:id/ticketPlan' element={
+                <TicketPlan />
+                }>
+              </Route>
         </Routes>
       </BrowserRouter>
       {/* <Navbar /> */}
