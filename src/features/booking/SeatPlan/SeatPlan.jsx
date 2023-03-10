@@ -1,8 +1,14 @@
 import styles from "./SeatPlan.module.css";
 import {Navbar} from "../../shared/NavBar/Navbar";
 import {Link} from "react-router-dom";
+import { useState } from "react";
 
 export function SeatPlan(){
+
+    const [length4, setLength4]=useState([1,1,1,1]);
+    const [silverPlus, setSilverPlus]=useState(['G', 'F']);
+
+    const [length6,setLength6]=useState([1,1,1,1,1,1]);
 
     return(
         <div className={styles.container}>
@@ -32,7 +38,58 @@ export function SeatPlan(){
                     <p>Mins Left</p>
                 </p>
             </div>
-            <div className={styles.seatPlan}></div>
+            <section className={styles.seatPlan}>
+                <p className={styles.screenHeader}>
+                    <hr className={styles.topLine} />
+                    <h2>SCREEN</h2>
+                    <hr />
+                </p>
+                <img width="50%" src="http://pixner.net/boleto/demo/assets/images/movie/screen-thumb.png"
+                ></img>
+                 <p className={styles.silverPlus}>
+                    <hr className={styles.topLine} />
+                    <h4>SLIVER PLUS</h4>
+                    <hr />
+                </p>
+                <table>
+                    {
+                        silverPlus.map(r=>
+                            <tr className={styles.seatRow}>
+                                <td>{r}</td>
+                                <td className={styles.seatCol}>
+                                {
+                                length4.map(i=>
+                                 <img src="http://pixner.net/boleto/demo/assets/images/movie/seat01.png">
+
+                                 </img>   
+                                    )
+                                 }
+                                </td>
+                                <td className={styles.seatCol}>
+                                {
+                                length6.map(i=>
+                                 <img src="http://pixner.net/boleto/demo/assets/images/movie/seat01.png">
+                                    
+                                 </img>   
+                                    )
+                                }
+                                </td>
+                                <td className={styles.seatCol}>
+                                {
+                                length4.map(i=>
+                                 <img src="http://pixner.net/boleto/demo/assets/images/movie/seat01.png">
+                                    
+                                 </img>   
+                                    )
+                                }
+                                </td>
+                                <td>{r}</td>
+                    </tr>
+                            )
+                    }
+                    
+                </table>
+            </section>
             <div className={styles.totalPrice}></div>
         </div>
     );

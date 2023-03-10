@@ -56,3 +56,49 @@ h1{
 .headerRight{
     color: white;
 }
+
+.seatPlan{
+    background-color: #001232;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.screenHeader{
+    width: 350px;
+    color: white;
+    text-align: center;
+}
+
+.silverPlus{
+    margin-top: 40px;
+    width: 350px;
+    color: #31d7a9;
+    text-align: center;
+}
+
+.topLine{
+    width: 75%;
+    margin: auto;
+    margin-bottom: 12px;
+}
+
+table{
+    color: white;
+    border-collapse: separate;
+    border-spacing: 6px;
+}
+
+.seatCol{
+    padding: 3px 26px;
+}
+
+.seatCol img{
+    margin: 0 3px;
+}
+
+.seatRow{
+    /* padding: 6px 0; */
+}
