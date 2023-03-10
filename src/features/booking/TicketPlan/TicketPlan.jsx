@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Navbar } from "../../shared/NavBar/Navbar";
 import styles from "./TicketPlan.module.css";
 
@@ -38,7 +38,10 @@ export function TicketPlan(){
                 <div className={styles.timeBox}>
                 {
                 c.timings.map(t=>
-                    <p className={styles.time}>{t.time}</p>
+                    <Link className={styles.link} to={'/movie/seatPlan/'+c._id}>
+                         <p className={styles.time}>{t.time}</p>
+                    </Link>
+                   
                     )
                 }
                 </div>

@@ -62,3 +62,7 @@
     justify-content: space-between;
     display: flex;
 }
+
+.link{
+    text-decoration: none;
+}

@@ -7,6 +7,7 @@ import { Home } from './features/movie/Home/Home';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import { MovieDetail } from './features/movie/MovieDetail/MovieDetail';
 import { TicketPlan } from './features/booking/TicketPlan/TicketPlan';
+import { SeatPlan } from './features/booking/SeatPlan/SeatPlan';
 
 function App() {
   return (
@@ -32,7 +33,13 @@ function App() {
           <Route path='/movie/:id/ticketPlan' element={
                 <TicketPlan />
                 }>
-              </Route>
+          </Route>
+          <Route path='/movie/seatPlan/:cinemaID'
+            element={
+              <SeatPlan />
+            }>
+              
+            </Route>
         </Routes>
       </BrowserRouter>
       {/* <Navbar /> */}
