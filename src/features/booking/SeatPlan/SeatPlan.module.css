@@ -84,17 +84,3 @@ h1{
     margin: auto;
     margin-bottom: 12px;
 }
-
-table{
-    color: white;
-    border-collapse: separate;
-    border-spacing: 6px;
-}
-
-.seatCol{
-    padding: 3px 26px;
-}
-
-.seatCol img{
-    margin: 0 3px;
-}
