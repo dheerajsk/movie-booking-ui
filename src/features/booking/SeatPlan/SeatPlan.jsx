@@ -2,12 +2,13 @@ import styles from "./SeatPlan.module.css";
 import {Navbar} from "../../shared/NavBar/Navbar";
 import {Link} from "react-router-dom";
 import { useState } from "react";
+import { BookingSummary } from "../BookingSummary/BookingSummary";
 
 export function SeatPlan(){
 
     const [length4, setLength4]=useState([1,1,1,1]);
     const [silverPlus, setSilverPlus]=useState(['G', 'F']);
-
+    const availableSeats=['F6','F7','F10','F3', 'F2','G1','G2', 'G6', 'G9', 'G10']
     const [length6,setLength6]=useState([1,1,1,1,1,1]);
 
     return(
@@ -58,28 +59,43 @@ export function SeatPlan(){
                                 <td>{r}</td>
                                 <td className={styles.seatCol}>
                                 {
-                                length4.map(i=>
-                                 <img src="http://pixner.net/boleto/demo/assets/images/movie/seat01.png">
-
+                                length4.map((item, i)=>
+                                 <img src=
+                                 {
+                                    availableSeats.includes(r+(i+1)) ?
+                                    "https://pixner.net/boleto/demo/assets/images/movie/seat01-free.png":
+                                    "http://pixner.net/boleto/demo/assets/images/movie/seat01.png"
+                                 }
+                                 >
                                  </img>   
                                     )
                                  }
                                 </td>
                                 <td className={styles.seatCol}>
                                 {
-                                length6.map(i=>
-                                 <img src="http://pixner.net/boleto/demo/assets/images/movie/seat01.png">
-                                    
-                                 </img>   
+                                length6.map((item, i)=>
+                                    <img src=
+                                    {
+                                       availableSeats.includes(r+(i+1)) ?
+                                       "https://pixner.net/boleto/demo/assets/images/movie/seat01-free.png":
+                                       "http://pixner.net/boleto/demo/assets/images/movie/seat01.png"
+                                    }
+                                    >
+                                    </img>  
                                     )
                                 }
                                 </td>
                                 <td className={styles.seatCol}>
                                 {
-                                length4.map(i=>
-                                 <img src="http://pixner.net/boleto/demo/assets/images/movie/seat01.png">
-                                    
-                                 </img>   
+                                length4.map((item, i)=>
+                                    <img src=
+                                    {
+                                       availableSeats.includes(r+(i+1)) ?
+                                       "https://pixner.net/boleto/demo/assets/images/movie/seat01-free.png":
+                                       "http://pixner.net/boleto/demo/assets/images/movie/seat01.png"
+                                    }
+                                    >
+                                    </img>  
                                     )
                                 }
                                 </td>
@@ -89,8 +105,9 @@ export function SeatPlan(){
                     }
                     
                 </table>
+
+                <BookingSummary />
             </section>
-            <div className={styles.totalPrice}></div>
         </div>
     );
 }
