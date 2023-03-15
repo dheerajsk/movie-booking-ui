@@ -4,14 +4,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Handle actions related to bookings
 
-const iS = {
+const initialState = {
     selectedSeats:[],
     seatPrice:150
 }
 
 // Creates reducers/actions
 const bookingSlice = createSlice({
-    name:'booking',
+    name:'bookingReducer',
     initialState,
     reducers:{
         // here we define multiple actions 
@@ -20,14 +20,20 @@ const bookingSlice = createSlice({
         // value will be a function to perform the action.
         // reducer function takes 2 parameters
         select:(state,action)=>{
+            console.log("Select Action received");
             console.log(action.type);
             state.selectedSeats.push(action.payload)
+            console.log(state.selectedSeats);
         }
     }
 
 });
 
+// exporting reducer
 export const bookingReducer = bookingSlice.reducer;
+
+// exporting actions.
+export const bookingActions = bookingSlice.actions;
 
 
 
