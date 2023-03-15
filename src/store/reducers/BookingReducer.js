@@ -19,7 +19,7 @@ const bookingSlice = createSlice({
         // key will be action name
         // value will be a function to perform the action.
         // reducer function takes 2 parameters
-        select:(state,action)=>{
+        select:(state, action)=>{
             console.log("Select Action received");
             console.log(action.type);
             state.selectedSeats.push(action.payload)
@@ -33,8 +33,10 @@ const bookingSlice = createSlice({
 export const bookingReducer = bookingSlice.reducer;
 
 // exporting actions.
-export const bookingActions = bookingSlice.actions;
+export const {select} = bookingSlice.actions;
 
+// exporting Selector
+export const bookingSelector = (state)=>state.bookingReducer.selectedSeats
 
 
 // const data = (state,action)=>{

@@ -1,8 +1,8 @@
 
 import styles from "./SeatLayout.module.css";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { bookingActions } from "../../../store/reducers/BookingReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { bookingSelector, select } from "../../../store/reducers/BookingReducer";
 
 export function SeatLayout(){
 
@@ -11,21 +11,12 @@ export function SeatLayout(){
     const availableSeats=['F6','F7','F10','F3', 'F2','G1','G2', 'G6', 'G9', 'G10']
     const [length6,setLength6]=useState([1,1,1,1,1,1]);
     // const [selectedSeats, setSelectedSeats]=useState([]);
-    const selectedSeats=[];
+    const selectedSeats=useSelector(bookingSelector);
     const dispatch = useDispatch();
 
     function selectSeat(seatNo){
-        dispatch(bookingActions.select(seatNo));
-        // const copyOfselectedSeats = [...selectedSeats];
-        // if(copyOfselectedSeats.includes(seatNo)){
-        //     const index = copyOfselectedSeats.indexOf(seatNo);
-        //     copyOfselectedSeats.splice(index, 1);
-        // }else{
-        //     copyOfselectedSeats.push(seatNo);
-        // }
-        // setSelectedSeats(copyOfselectedSeats);
-
-
+        dispatch(select(seatNo));
+       
     }
 
     return(
