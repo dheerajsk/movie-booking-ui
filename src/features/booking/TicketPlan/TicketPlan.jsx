@@ -23,6 +23,7 @@ export function TicketPlan(){
     <Navbar />
         <div className={styles.container}>
             <div className={styles.panel}>
+                
             {
                 cinemas.map(c=>
             <div className={styles.timings}>
