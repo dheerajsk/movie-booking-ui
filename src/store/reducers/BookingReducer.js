@@ -41,7 +41,7 @@ export const {select, remove} = bookingSlice.actions;
 
 // exporting Selector
 export const bookingSelector = (state)=>state.bookingReducer.selectedSeats
-
+export const priceSelector = (state)=> state.bookingReducer.seatPrice;
 
 // const data = (state,action)=>{
 

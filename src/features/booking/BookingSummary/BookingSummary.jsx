@@ -1,11 +1,13 @@
 
 import styles from "./BookingSummary.module.css";
 import {useSelector} from "react-redux";
-import { bookingSelector } from "../../../store/reducers/BookingReducer";
+import { bookingSelector, priceSelector } from "../../../store/reducers/BookingReducer";
 
 export function BookingSummary(){
 
     const selectedSeats = useSelector(bookingSelector);
+    const seatPrice = useSelector(priceSelector);
+    const totalPrice = seatPrice*(selectedSeats.length);
 
     return (
         <div className={styles.bookingSummary}>
@@ -26,7 +28,7 @@ export function BookingSummary(){
             </div>
             <div className={styles.item}>
                 <p className={styles.itemHeader}>Total Price</p>
-                <h3 className={styles.itemContent}>$150</h3>
+                <h3 className={styles.itemContent}>{totalPrice}</h3>
             </div>
             <div className={styles.item}>
                 <a href="#" className={styles.btnProceed}>Proceed</a>
