@@ -2,7 +2,7 @@
 import styles from "./SeatLayout.module.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { bookingSelector, select } from "../../../store/reducers/BookingReducer";
+import { bookingSelector, remove, select } from "../../../store/reducers/BookingReducer";
 
 export function SeatLayout(){
 
@@ -13,10 +13,16 @@ export function SeatLayout(){
     // const [selectedSeats, setSelectedSeats]=useState([]);
     const selectedSeats=useSelector(bookingSelector);
     const dispatch = useDispatch();
+    console.log(selectedSeats);
 
     function selectSeat(seatNo){
-        dispatch(select(seatNo));
-       
+        console.log(selectedSeats.includes(seatNo));
+        if(selectedSeats.includes(seatNo)){
+            console.log("Calling remove");
+            dispatch(remove(seatNo));
+        }else{
+            dispatch(select(seatNo));
+        }
     }
 
     return(
