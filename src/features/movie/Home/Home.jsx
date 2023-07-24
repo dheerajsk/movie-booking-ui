@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { Navbar } from "../../shared/NavBar/Navbar";
-import { Banner } from "../Banner/Banner.module";
+import { Banner } from "../Banner/Banner";
 import { MovieCard } from "../MovieCard/MovieCard";
 import { SearchPanel } from "../SearchPanel/SearchPanel";
 import {Link} from "react-router-dom";
@@ -12,11 +12,15 @@ export function Home(){
     const [movies, setMovies]=useState([]);
 
     useEffect(()=>{
+
+        // fetch("url", cb);
+
         fetch("http://localhost:4000/api/movie")
             .then((res)=> res.json())
                 .then(movies=>{
+                    // ? ThreadPool, MainThread ?
                     setMovies(movies);
-                })
+                }).catch(err=>{})
     },[])
 
     return (
@@ -35,6 +39,7 @@ export function Home(){
                                 <MovieCard key={m._id} movie={m} />
                             </Link>
                         </div>
+                        
                         
                         )
                 }

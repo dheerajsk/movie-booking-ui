@@ -23,17 +23,17 @@ function App() {
              <Home />
           }>
           </Route>
+          <Route path='/signin' element={
+             <Signin />
+          }>
+          </Route>
+          <Route path='/signup' element={
+             <Signup />
+          }>
+          </Route>
           <Route path='/movie/:id/' element={
              <MovieDetail />
           }>
-            {/* <Route path='ticketPlan' element={
-                <TicketPlan />
-                }>
-              </Route>
-              <Route path='checkout' element={
-                <Navbar />
-                }>
-              </Route> */}
           </Route>
           <Route path='/movie/:id/ticketPlan' element={
                 <TicketPlan />
