@@ -3,10 +3,10 @@ import styles from './MovieCard.module.css'
 
 export function MovieCard({ movie }) {
   // const dataFromParent = props.movie
-  const header = <img alt="Card" src={movie.posterUrl} />
+  const header = <img alt="Card" src={movie.imageUrl} />
   return (
     <div className={styles.card}>
-      <Card title={movie.name} header={header} className="md:w-25rem">
+      <Card title={movie.title} header={header} className="md:w-25rem">
         <div className={styles.content}>
           <hr />
           <div className={styles.ratings}>

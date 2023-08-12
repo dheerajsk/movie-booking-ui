@@ -15,7 +15,7 @@ export function Home(){
 
         // fetch("url", cb);
 
-        fetch("http://localhost:4000/api/movie")
+        fetch("http://127.0.0.1:8000/api/movies")
             .then((res)=> res.json())
                 .then(movies=>{
                     // ? ThreadPool, MainThread ?
@@ -34,9 +34,9 @@ export function Home(){
             <div className="row">
                 {
                     movies.map(m=>
-                        <div key={m._id} className="col-md-3">
-                           <Link to={`movie/${m._id}`}>
-                                <MovieCard key={m._id} movie={m} />
+                        <div key={m.id} className="col-md-3">
+                           <Link to={`movie/${m.id}`}>
+                                <MovieCard key={m.id} movie={m} />
                             </Link>
                         </div>
                         
