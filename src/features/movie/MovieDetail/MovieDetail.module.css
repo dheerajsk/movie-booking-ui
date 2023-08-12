@@ -29,6 +29,11 @@
     padding-left: 400px;
 }
 
+.actors{
+    color: white;
+    margin-right: 25px;
+}
+
 .headerImg{
     position: absolute;
     top: 270px;
